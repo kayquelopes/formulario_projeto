@@ -10,6 +10,8 @@ const produto = reactive({
   senhar: '',
   estado: [],
   hobbie: [],
+  linguagem: [],
+  biografia: '',
 })
 const estados = [
   { id: 'AC', name: 'Acre' },
@@ -44,6 +46,9 @@ const hobbies = [{ id: 'Futebol', name: 'Futebol' },
 { id: 'Ler', name: 'Ler' },
 { id: 'Desenhar', name: 'Desenhar' },
 { id: 'Jogar Videogame', name: 'Jogar Videogame' },];
+const linguagens = [{ id: 'JavaScript', name: 'JavaScript' },
+{ id: 'python', name: 'python' },
+]
 </script>
 
 <template>
@@ -55,7 +60,7 @@ const hobbies = [{ id: 'Futebol', name: 'Futebol' },
       <hr>
       <div class="row">
         <label for="nome">Nome: </label>
-        <input type="text" v-model="produto.nome">
+        <input type="text" v-model="produto.nome" minlength="3" maxlength="20">
       </div>
       <div class="row">
         <label for="email">E-mail: </label>
@@ -90,6 +95,18 @@ const hobbies = [{ id: 'Futebol', name: 'Futebol' },
         </div>
 
       </fieldset>
+      <fieldset>
+        <legend>Linguagens</legend>
+        <div v-for="linguagem in linguagens" :key="linguagem.id">
+          <input type="checkbox" v-model="produto.linguagem" :value=linguagem.id>{{ linguagem.name }}
+        </div>
+
+      </fieldset>
+      <div class="row">
+        <label for="biografia">biografia: </label>
+        <input type="text" v-model="produto.biografia">
+      </div>
+
       <button @click="mostrarResultado = !mostrarResultado">Enviar</button>
 
     </div>
@@ -104,6 +121,8 @@ const hobbies = [{ id: 'Futebol', name: 'Futebol' },
         <p>Endereço: {{ produto.enderoco }}</p>
         <p>Estado: {{ produto.estado }}</p>
         <p>Hobbies: {{ produto.hobbie }}</p>
+        <p>Hobbies: {{ produto.linguagem }}</p>
+        <p>Hobbies: {{ produto.biografia }}</p>
         <p>{{ mostrarResultado }}</p>
       </div>
     </Trasintion>
