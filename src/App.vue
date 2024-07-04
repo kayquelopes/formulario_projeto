@@ -117,12 +117,13 @@ const linguagens = [{ id: 'JavaScript', name: 'JavaScript' },
         <p>Nome: {{ produto.nome }}</p>
         <p>E-mail {{ produto.email }}</p>
         <p>Senha: {{ produto.senha }}</p>
+        <p>Confirmação de Senha: {{ produto.senhar }}</p>
         <p>Data de Nascimento: {{ produto.dnasc }}</p>
         <p>Endereço: {{ produto.enderoco }}</p>
         <p>Estado: {{ produto.estado }}</p>
         <p>Hobbies: {{ produto.hobbie }}</p>
-        <p>Hobbies: {{ produto.linguagem }}</p>
-        <p>Hobbies: {{ produto.biografia }}</p>
+        <p>liguagem: {{ produto.linguagem }}</p>
+        <p>biografia: {{ produto.biografia }}</p>
         <p>{{ mostrarResultado }}</p>
       </div>
     </Trasintion>
